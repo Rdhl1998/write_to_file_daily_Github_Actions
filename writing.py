@@ -15,4 +15,3 @@ def write_to_file(filename, text):
 filename = 'dates.txt'
 
 write_to_file(filename, x)
-print(x)
