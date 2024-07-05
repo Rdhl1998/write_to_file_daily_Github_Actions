@@ -1,7 +1,7 @@
 name: run write.py
 on:
   schedule:
-    - cron:  '26 10 * * *'
+    - cron:  '29 12 * * *'
     # This runs at 10:26 AM UTC each day.
     # * is a special character in YAML so you have to quote this string
 
@@ -9,12 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content
+        uses: actions/checkout@v4 # checkout the repository content / More info at https://github.com/marketplace/actions/checkout
 
       - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' # install the python version needed
+          python-version: '3.10' # install the python version needed / More info at https://github.com/marketplace/actions/setup-python
 
       - name: execute py script # run main.py
         run: python writing.py # Runs the script you want to run 
+
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+          with: 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
