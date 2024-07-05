@@ -6,12 +6,11 @@ The format will be  DD-MM-YYYY HH:MM:SS /n
 '''
 
 import datetime
-x = datetime.datetime.now()
+x = str(datetime.datetime.now()) + "\n"
+filename = 'dates.txt'
 
 def write_to_file(filename, text):
-    with open(filename,'w') as file:
-        file.write(str(x))
-
-filename = 'dates.txt'
+    with open(filename,'a') as file:
+        file.write(text)
 
 write_to_file(filename, x)
