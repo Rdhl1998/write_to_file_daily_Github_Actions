@@ -1,9 +1,9 @@
 name: run write.py
 on:
-  workflow_dispatch:
- # schedule:
-  #  - cron:  '55 08 * * *'
-    # This runs at 10:26 AM UTC each day.
+  # workflow_dispatch: manual
+ schedule:
+    - cron:  '55 08 * * *'
+    # This runs at 08:55 AM UTC each day.
     # * is a special character in YAML so you have to quote this string
 
 jobs:
