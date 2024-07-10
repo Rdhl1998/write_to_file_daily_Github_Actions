@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    using: 'nod20'
     steps:
       - name: checkout repo content
         uses: actions/checkout@v4 # checkout the repository content / More info at https://github.com/marketplace/actions/checkout
